@@ -4,12 +4,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 public class TetrisBlock {
-	//static final int START_POS_X = 5;
-	//static final int START_POS_Y = 2;
+	static final int START_POS_X = 5;
+	static final int START_POS_Y = 2;
 
 	
-	static final int START_POS_X = 5;
-	static final int START_POS_Y = 16;
+	//static final int START_POS_X = 5;
+	//static final int START_POS_Y = 16;
 	
 	
 	public HashSet<Block> blockSet;
