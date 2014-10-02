@@ -1,41 +1,34 @@
 package tetris3;
 
-import java.util.HashSet;
 import java.util.Scanner;
 
 public class Tetris implements Runnable {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) throws CloneNotSupportedException {
 
 		Tetris tetris = new Tetris();
-		// Frame frame = new Frame();
+		Timer timer = new Timer();
 		Thread drawThread = new Thread(tetris);
-		// Thread keyThread = new Thread(frame);
+		Thread timerThread = new Thread(timer);
 
 		drawThread.start();
-		// keyThread.start();
+		timer.run();
 	}
 
 	public void start() throws CloneNotSupportedException {
+
 		BlockFactory blockFactory = new BlockFactory();
-		Order order = new Order();
 
 		String msg;
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		System.out.println("움직일 방향을 입력하세요(w a s d) : ");
 
 		Draw draw = new Draw();
 		Mover mover;
 		while (true) {
-		
-		if (Repository.tetrisBlock.size() == 0) {
-			HashSet<Position> posSet = blockFactory.loadInfo(order.randBlock());
-			TetrisBlock tetrisBlock = new TetrisBlock(
-					blockFactory.makeBlock(posSet));
-			Repository.tetrisBlock.add(tetrisBlock);
-			
-		}
+			blockFactory.createBlock();
 			mover = new Mover();
-		
 			draw.boardClear();
 			draw.analyzer();
 			draw.drawing();

@@ -7,11 +7,6 @@ public class TetrisBlock {
 	static final int START_POS_X = 5;
 	static final int START_POS_Y = 2;
 
-	
-//	static final int START_POS_X = 5;
-//	static final int START_POS_Y = 16;
-	
-	
 	public HashSet<Block> blockSet;
 	public Position pos;
 
@@ -23,39 +18,39 @@ public class TetrisBlock {
 		this.blockSet = blockSet;
 	}
 
-	//실제로 움직이는 곳
-	void moveLeft(){
+	// 실제로 움직이는 곳
+	void moveLeft() {
 		pos.moveLeft();
 	}
-	
-	void moveRight(){
+
+	void moveRight() {
 		pos.moveRight();
 	}
-	
-	void moveDown(){
+
+	void moveDown() {
 		pos.moveDown();
 	}
-	
-	void moveUp(){
+
+	void moveUp() {
 		pos.moveUp();
 	}
-	
-	void moveRotate(){
+
+	void moveRotate() {
 		Iterator<Block> i = blockSet.iterator();
 		while (i.hasNext()) {
 			i.next().pos.moveRotate();
 		}
 	}
-	
-	void moveRotateCW(){
+
+	void moveRotateCW() {
 		Iterator<Block> i = blockSet.iterator();
 		while (i.hasNext()) {
 			i.next().pos.moveRotateCW();
 		}
 	}
-	
-	//테트리스 블럭을 일반블럭으로 전환하여 저장.
-	void stack(HashSet<Position> absolutePos) throws CloneNotSupportedException{
+
+	// 테트리스 블럭을 일반블럭으로 전환하여 저장.
+	void stack(HashSet<Position> absolutePos) throws CloneNotSupportedException {
 		Iterator<Position> i = absolutePos.iterator();
 		while (i.hasNext()) {
 			Position p = (Position) i.next().clone();

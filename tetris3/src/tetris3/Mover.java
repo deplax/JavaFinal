@@ -46,27 +46,10 @@ public class Mover {
 		rule.unfold(tetrisBlock);
 		tetrisBlock.stack(rule.tempPos);
 
-		//현재블럭 삭제
+		// 현재블럭 삭제
 		Repository.tetrisBlock.remove(0);
+		removeLine();
 
-		// 이거 메소드로 빼야되는데 시간없음 나중에
-		while (rule.isLinefull() >= 0) {
-			LinkedList<Block> allBlock = Repository.block;
-			int line = rule.isLinefull();
-			
-			System.out.println("line : " + line);
-			for (int j = 0; j < allBlock.size(); j++) {
-				int y = allBlock.get(j).pos.getPosY();
-				if (y == line) {
-					allBlock.remove(j);
-					j--;
-				}
-			}
-			for (int i = 0; i < allBlock.size(); i++) {
-				if(allBlock.get(i).pos.getPosY() < 20)
-				allBlock.get(i).pos.moveDown();
-			}
-		}
 	}
 
 	void moveRotate() throws CloneNotSupportedException {
@@ -78,5 +61,24 @@ public class Mover {
 			return;
 		}
 		tetrisBlock.moveRotateCW();
+	}
+
+	void removeLine() {
+		while (rule.isLinefull() >= 0) {
+			LinkedList<Block> allBlock = Repository.block;
+			int line = rule.isLinefull();
+
+			System.out.println("line : " + line);
+			for (int j = 0; j < allBlock.size(); j++) {
+				int y = allBlock.get(j).pos.getPosY();
+				if (y == line) {
+					allBlock.remove(j);
+					j--;
+				}
+			}
+			for (int i = 0; i < allBlock.size(); i++) {
+				allBlock.get(i).pos.moveDown();
+			}
+		}
 	}
 }

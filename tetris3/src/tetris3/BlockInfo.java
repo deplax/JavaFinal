@@ -7,11 +7,11 @@ public class BlockInfo {
 	// 블륵은 어떻게 생겼는지 알려주는 문서야.
 	// 블럭의 각 정보를 저장하고 있는 데이터의 개념.
 	public HashMap<Type, HashSet<Position>> shape = new HashMap<Type, HashSet<Position>>();
-	
+
 	public BlockInfo() {
 		blockInitial();
 	}
-	
+
 	private void blockInitial() {
 		HashSet<Position> setSQURE = new HashSet<Position>();
 		setSQURE.add(new Position(0, 0));
@@ -68,7 +68,7 @@ public class BlockInfo {
 		// 　▩
 		// 　▦
 		// ▩▩
-		
+
 		HashSet<Position> setSTICK = new HashSet<Position>();
 		setSTICK.add(new Position(0, 0));
 		setSTICK.add(new Position(-1, 0));

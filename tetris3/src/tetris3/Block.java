@@ -7,9 +7,9 @@ public class Block {
 	public Block(Position pos) {
 		this.pos = pos;
 	}
-	
-	public Position getPos(){
+
+	public Position getPos() {
 		return pos;
 	}
-	
+
 }

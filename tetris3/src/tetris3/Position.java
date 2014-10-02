@@ -7,53 +7,53 @@ public class Position implements Cloneable {
 		this.x = x;
 		this.y = y;
 	}
-	
-	public void moveDown(){
+
+	public void moveDown() {
 		y++;
 	}
-	
-	public void moveUp(){
+
+	public void moveUp() {
 		y--;
 	}
-	
-	public void moveLeft(){
+
+	public void moveLeft() {
 		x--;
 	}
-	
-	public void moveRight(){
+
+	public void moveRight() {
 		x++;
 	}
-	
-	public void moveRotate(){
+
+	public void moveRotate() {
 		int temp;
 		temp = x;
 		x = y;
 		y = temp;
 		y = y * -1;
 	}
-	
-	public void moveRotateCW(){
+
+	public void moveRotateCW() {
 		int temp;
 		temp = x;
 		x = y;
 		y = temp;
 		x = x * -1;
 	}
-	
-	public int getPosX(){
+
+	public int getPosX() {
 		return x;
 	}
-	
-	public int getPosY(){
+
+	public int getPosY() {
 		return y;
 	}
-	
-	//절대좌표 계산용
-	public void calcPosX(int absoluteX){
+
+	// 절대좌표 계산용
+	public void calcPosX(int absoluteX) {
 		x += absoluteX;
 	}
 
-	public void calcPosY(int absoluteY){
+	public void calcPosY(int absoluteY) {
 		y += absoluteY;
 	}
 
@@ -85,7 +85,7 @@ public class Position implements Cloneable {
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
-		return (Position)super.clone();
+		return (Position) super.clone();
 	}
-	
+
 }

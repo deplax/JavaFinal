@@ -9,9 +9,6 @@ public class Rule {
 
 	// 계산의 편의를 위한 임시 절대좌표 세트
 	HashSet<Position> tempPos = new HashSet<Position>();
-
-	// Iterator를 따로 빼내는 경우는 나중에 테스트(이거 중복코드임)
-
 	public Rule(TetrisBlock tetrisBlock) throws CloneNotSupportedException {
 		unfold(tetrisBlock);
 	}
@@ -24,7 +21,7 @@ public class Rule {
 		Iterator<Position> i = tempPos.iterator();
 
 		while (i.hasNext()) {
-			if (i.next().getPosY() >= 20)
+			if (i.next().getPosY() >= Repository.BOARD_SIZE_Y)
 				return true;
 		}
 		return false;
@@ -47,7 +44,7 @@ public class Rule {
 		Iterator<Position> i = tempPos.iterator();
 
 		while (i.hasNext()) {
-			if (i.next().getPosX() >= 10)
+			if (i.next().getPosX() >= Repository.BOARD_SIZE_X)
 				return true;
 		}
 		return false;
@@ -96,18 +93,18 @@ public class Rule {
 	}
 
 	// 한줄이 모두 채워졌니?
-	public int isLinefull(){
-		int[] line = new int[20];
+	public int isLinefull() {
+		int[] line = new int[Repository.BOARD_SIZE_Y];
 		for (int i = 0; i < line.length; i++) {
 			line[i] = 0;
 		}
-		
+
 		for (int j = 0; j < allBlock.size(); j++) {
 			line[allBlock.get(j).pos.getPosY()]++;
 		}
-		
+
 		for (int i = 0; i < line.length; i++) {
-			if(line[i] == 10)
+			if (line[i] == 10)
 				return i;
 		}
 		return -1;
