@@ -6,8 +6,8 @@ public class Mover {
 	// 움직여야지 근데 그냥 움직이면 안되고 허락받고 움직여야 해
 	// 난 움직여 주는게 아니라 RuleBook을 보고 허락만 해줄꺼야
 
-	Rule rule;
-	TetrisBlock tetrisBlock;
+	private Rule rule;
+	private TetrisBlock tetrisBlock;
 
 	public Mover() throws CloneNotSupportedException {
 		tetrisBlock = Repository.tetrisBlock.peek();

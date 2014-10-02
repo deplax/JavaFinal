@@ -14,8 +14,6 @@ public class BlockFactory {
 	// 일단 Info를 불러 오는거야
 	// 블럭별로 따로 불러오려 했는데 그냥 한번에 불러오는게 성능상 이득일 것 같아
 
-	// private LinkedList<HashSet<Block>> tetrisBlock = new
-	// LinkedList<HashSet<Block>>();
 
 	// 블럭의 정보를 불러오자. 이건 한번이면 되.
 	private BlockInfo blockInfo = new BlockInfo();

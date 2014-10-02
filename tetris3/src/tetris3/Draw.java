@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Draw {
-	int x = Repository.BOARD_SIZE_X;
-	int y = Repository.BOARD_SIZE_Y;
+	private int x = Repository.BOARD_SIZE_X;
+	private int y = Repository.BOARD_SIZE_Y;
 
 	int[][] board;
 
