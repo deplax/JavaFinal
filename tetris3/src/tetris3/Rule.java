@@ -103,7 +103,6 @@ public class Rule {
 		}
 		
 		for (int j = 0; j < allBlock.size(); j++) {
-			System.out.println(allBlock.get(j).pos.getPosY());
 			line[allBlock.get(j).pos.getPosY()]++;
 		}
 		

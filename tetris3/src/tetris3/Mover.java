@@ -52,15 +52,19 @@ public class Mover {
 		while (rule.isLinefull() >= 0) {
 			LinkedList<Block> allBlock = Repository.block;
 			int line = rule.isLinefull();
+			
+			System.out.println("line : " + line);
 			for (int j = 0; j < allBlock.size(); j++) {
-				if (allBlock.get(j).pos.getPosY() == line) {
+				int y = allBlock.get(j).pos.getPosY();
+				if (y == line) {
 					allBlock.remove(j);
+					j--;
 				}
 			}
-//			for (int i = 0; i < allBlock.size(); i++) {
-//				if(allBlock.get(i).pos.getPosY() < 20)
-//				allBlock.get(i).pos.moveDown();
-//			}
+			for (int i = 0; i < allBlock.size(); i++) {
+				if(allBlock.get(i).pos.getPosY() < 20)
+				allBlock.get(i).pos.moveDown();
+			}
 		}
 	}
 
