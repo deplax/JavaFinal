@@ -23,8 +23,6 @@ public class TetrisBlock {
 		this.blockSet = blockSet;
 	}
 
-	
-	
 	//실제로 움직이는 곳
 	void moveLeft(){
 		pos.moveLeft();
@@ -56,6 +54,7 @@ public class TetrisBlock {
 		}
 	}
 	
+	//테트리스 블럭을 일반블럭으로 전환하여 저장.
 	void stack(HashSet<Position> absolutePos) throws CloneNotSupportedException{
 		Iterator<Position> i = absolutePos.iterator();
 		while (i.hasNext()) {

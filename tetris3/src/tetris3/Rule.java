@@ -108,9 +108,7 @@ public class Rule {
 		
 		for (int i = 0; i < line.length; i++) {
 			if(line[i] == 10)
-			{
 				return i;
-			}
 		}
 		return -1;
 	}

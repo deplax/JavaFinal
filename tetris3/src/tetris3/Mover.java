@@ -46,6 +46,7 @@ public class Mover {
 		rule.unfold(tetrisBlock);
 		tetrisBlock.stack(rule.tempPos);
 
+		//현재블럭 삭제
 		Repository.tetrisBlock.remove(0);
 
 		// 이거 메소드로 빼야되는데 시간없음 나중에

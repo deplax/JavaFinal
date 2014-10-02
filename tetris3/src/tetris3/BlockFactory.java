@@ -56,8 +56,8 @@ class Order {
 	}
 	Random rand = new Random();
 	public int randNum(){
-		//return rand.nextInt(6);
-		return 1;
+		return rand.nextInt(6);
+		//return 1;
 	}
 	
 	public Type randBlock(){
